@@ -62,3 +62,13 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
+# Pay gem to manage payment method
+gem 'pay', '~> 3.0'
+
+# To use Stripe, also include:
+gem 'stripe', '>= 5.0', '< 6.0'
+
+# To use Receipts gem for creating invoice and receipt PDFs, also include:
+gem 'receipts', '~> 2.0'
