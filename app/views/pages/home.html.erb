@@ -1,5 +1,9 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+<div class="p-5">
+  <h3><%= current_user.subscripted %></h3>
+  <h3><%= current_user.subscribed_till %></h3>
+</div>
 <%= form_tag subscribe_path do %>
   <%= hidden_field_tag 'priceId', "price_1KuszXJskFaNBqW0r9s0RKvr" %>
   <%= submit_tag 'Purchase', class: 'btn btn-primary' %>

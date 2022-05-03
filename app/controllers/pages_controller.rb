@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  # skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
   end
@@ -9,7 +9,7 @@ class PagesController < ApplicationController
 
     @session = Stripe::Checkout::Session.create({
       success_url: root_url,
-    cancel_url: subscribe_url,
+    cancel_url: payment_url,
       mode: 'subscription',
       line_items: [{
         # For metered billing, do not pass quantity
