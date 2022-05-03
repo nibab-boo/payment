@@ -72,3 +72,5 @@ gem 'stripe', '>= 5.0', '< 6.0'
 
 # To use Receipts gem for creating invoice and receipt PDFs, also include:
 gem 'receipts', '~> 2.0'
+
+gem 'sidekiq'
