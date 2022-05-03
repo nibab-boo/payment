@@ -1,0 +1,18 @@
+<h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+<div class="p-5">
+  <h3><%= current_user.subscripted %></h3>
+  <h3><%= current_user.subscribed_till %></h3>
+</div>
+<button id="pay" class="btn btn-primary">Pay</button>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+  const paymentButton = document.getElementById('pay');
+  paymentButton.addEventListener('click', () => {
+    const stripe = Stripe('<%= Rails.application.credentials.stripe[:public_key] %>');
+    stripe.redirectToCheckout({
+      sessionId: '<%= @session.id %>'
+    });
+  });
+</script>

@@ -1,2 +1,12 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+<%= form_tag subscribe_path do %>
+  <%= hidden_field_tag 'priceId', "price_1KuszXJskFaNBqW0r9s0RKvr" %>
+  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+<% end %>
+<%# <form action="/subscribe" method="POST">
+  <!-- Note: If using PHP set the action to /create-checkout-session.php -->
+
+  <input type="hidden" name="priceId" value="price_1KuszXJskFaNBqW0r9s0RKvr" />
+  <button type="submit">Checkout</button>
+</form> %>
