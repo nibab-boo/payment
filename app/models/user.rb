@@ -7,6 +7,6 @@ class User < ApplicationRecord
 
   has_many :subscriptions, dependent: :destroy
   def subscribed?
-    subscripted != "free"
+    subscriptions.where(status: 'active').any?
   end
 end

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'paytohome', to: 'pages#home'
   post 'subscribe', to: 'pages#subscribe'
 
+  resources :billings, only: :create
   get 'pricing', to: 'static#pricing'
 
   namespace :purchase do
@@ -14,5 +15,7 @@ Rails.application.routes.draw do
   get 'success', to: 'purchase/checkouts#success'
 
   resources :subscriptions, only: [:index]
+
+  resources :webhooks, only: [:create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

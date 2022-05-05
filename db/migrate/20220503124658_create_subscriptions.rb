@@ -5,6 +5,8 @@ class CreateSubscriptions < ActiveRecord::Migration[6.1]
       t.string :customer_id
       t.references :user, null: false
       t.string :status
+      t.string :interval
+      t.string :subscription_id
       t.datetime :current_period_start
       t.datetime :current_period_end
 

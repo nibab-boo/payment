@@ -25,11 +25,16 @@
 
   <div class="form-actions">
     <%= f.button :submit, "Update" %>
+    
   </div>
 <% end %>
 
 <h3>Cancel my account</h3>
-
+<% if current_user.subscribed? %>
+      <div>
+        <%= button_to "Manage billing", billings_path, data: {turbo: false}, class: "btn btn-info" %>
+      </div>
+    <% end %>
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
